@@ -14,15 +14,15 @@
 # Screenshots
 
 ## Web
-<div style="display: flex; align-items: center; justify-content: center;">
-  <img src="./assets/web-landing-page.png" alt="Web landing page" width="500"style="margin-right: 10px;">
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <img src="./assets/web-landing-page.png" alt="Web landing page" width="500" style="margin-top: 20px;">
   <img src="./assets/web-teacher-list.png" alt="Web teacher list" width="500">
 </div>
 
 ## Mobile
 <div style="display: flex; align-items: center; justify-content: center;">
-  <img src="./assets/mobile-landing-page.png" alt="Mobile landing page" height="300" style="margin-right: 10px;">
-  <img src="./assets/mobile-teacher-list.png" alt="Mobile teacher list" height="300">
+  <img src="./assets/mobile-landing-page.png" alt="Mobile landing page" height="400" style="margin-right: 10px;">
+  <img src="./assets/mobile-teacher-list.png" alt="Mobile teacher list" height="400">
 </div>
 
 # About Project
