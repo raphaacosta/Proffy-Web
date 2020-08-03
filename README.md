@@ -14,7 +14,7 @@
 # Screenshots
 
 ## Web
-<div style="display: flex; flex-direction: column; align-items: center;">
+<div style="display: flex; flex-direction: column; align-items: center; justfy-content: center;">
   <img src="./assets/web-landing-page.png" alt="Web landing page" width="500" style="margin-top: 20px;">
   <img src="./assets/web-teacher-list.png" alt="Web teacher list" width="500">
 </div>
