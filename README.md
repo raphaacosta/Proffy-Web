@@ -1,44 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+  <div>
+    <img src="./src/assets/images/logo.svg" alt="Proffy" style="width: 250px;">
+  </div>
+  <a href="https://linktr.ee/rocketseat">
+    <img src="https://img.shields.io/badge/Made%20by-rocketseat-blueviolet" alt="Made by Rocketseat">
+  </a>
+  <a href="https://github.com/diego3g">
+    <img src="https://img.shields.io/badge/Ministered%20by-Diego%20Fernandes-blueviolet" alt="Ministered by Diego Fernandes">
+  </a>
+  <img src="https://img.shields.io/badge/Next%20Level%20Week-2-blueviolet" alt="NLW 2"> 
+</h1>
 
-## Available Scripts
+# Screenshots
 
-In the project directory, you can run:
+## Web
+<div style="display: flex; align-items: center; justify-content: center;">
+  <img src="./assets/web-landing-page.png" alt="Web landing page" style="width: 500px; margin-right: 10px;">
+  <img src="./assets/web-teacher-list.png" alt="Web teacher list" style="width: 500px">
+</div>
 
-### `yarn start`
+## Mobile
+<div style="display: flex; align-items: center; justify-content: center;">
+  <img src="./assets/mobile-landing-page.png" alt="Mobile landing page" style="height: 300px; margin-right: 10px;">
+  <img src="./assets/mobile-teacher-list.png" alt="Mobile teacher list" style="height: 300px;">
+</div>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# About Project
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+> Proffy is an application made for the purpose of easily connecting students and teachers.
 
-### `yarn test`
+# Running 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ To run this application, clone this repository by: `$ git clone https://github.com/raphaacosta/Proffy-Web.git`.
+ - Install the dependencies by: `$ yarn install`.
+ - Run `$ yarn start` (if the browser don't open, open it and access `localhost:3000`)
 
-### `yarn build`
+# Techs
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ - [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+ - [Typescript](https://www.typescriptlang.org/)
+ - [React.js](https://pt-br.reactjs.org/)
+ - [styled-components](https://styled-components.com/) (on going)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Contribute
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+  If you find an bug, feel free to open an pull request or an issue.
+  If you want to improve this project, just do it ➡️ :
+  - Clone this repository: `$ git clone https://github.com/raphaacosta/Proffy-Web.git`.
+  - Create a branch with your feature: `$ git checkout -b my-feature`.
+  - Commit your changes: `$ git commit -m 'feat: my new feature'`.
+  - Push your branch: `$ git push origin my-feature`.
