@@ -2,16 +2,21 @@ import React from 'react';
 
 import PageHeader from '../../components/PageHeader';
 
-
-import './styles.css';
 import TeacherItem from '../../components/TeacherItem';
+
+// import './styles.css';
+import {
+  Container,
+  Form,
+  List
+} from './styles';
 
 const TeacherList: React.FC = () => {
   const title = "Estes são os proffys disponíveis.";
   return (
-    <div id="page-teacher-list" className="container">
+    <Container>
       <PageHeader title={title}>
-        <form id="search-teachers">
+        <Form>
           <div className="input-block">
             <label htmlFor="subject">Matéria</label>
             <input type="text" id="subject"/>
@@ -26,18 +31,18 @@ const TeacherList: React.FC = () => {
             <label htmlFor="time">Hora</label>
             <input type="text" id="time"/>
           </div>
-        </form>
+        </Form>
       </PageHeader>
 
-      <main>
+      <List>
         <TeacherItem />
         <TeacherItem />
         <TeacherItem />
         <TeacherItem />
         <TeacherItem />
         <TeacherItem />
-      </main>
-    </div>
+      </List>
+    </Container>
   );
 }
 

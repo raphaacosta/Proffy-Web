@@ -40,7 +40,7 @@
  - [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
  - [Typescript](https://www.typescriptlang.org/)
  - [React.js](https://pt-br.reactjs.org/)
- - [styled-components](https://styled-components.com/) (on going)
+ - [styled-components](https://styled-components.com/)
 
 
 # Contribute

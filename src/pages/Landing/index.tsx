@@ -8,23 +8,29 @@ import studyIcon from '../../assets/images/icons/study.svg';
 import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 
-import './styles.css';
+import {
+  Container,
+  WebContentContainer,
+  LogoContainer,
+  HeroImage,
+  ButtonsContainer,
+  TotalConnections
+} from './styles';
 
 const Landing = () => {
   return (
-    <div id="page-landing">
-      <div id="page-landing-content" className="container">
-        <div className="logo-container">
+    <Container>
+      <WebContentContainer>
+        <LogoContainer>
           <img src={logoImg} alt="Proffy"/>
           <h2>Sua plataforma de estudos online.</h2>
-        </div>
-        <img 
+        </LogoContainer>
+        <HeroImage 
           src={landingImg} 
-          alt="Plataforma de estudos" 
-          className="hero-image"
+          alt="Plataforma de estudos"
         />
 
-        <div className="buttons-container">
+        <ButtonsContainer>
           <Link to="/study" className="study">
              <img src={studyIcon} alt="Estudar"/>
              Estudar 
@@ -33,13 +39,13 @@ const Landing = () => {
              <img src={giveClassesIcon} alt="Dar aula"/>
              Dar aula
           </Link>
-        </div>
+        </ButtonsContainer>
 
-        <span className="total-connections">
+        <TotalConnections>
           Total de 200 conexões já realizadas <img src={purpleHeartIcon} alt="Coração roxo"/>
-        </span>
-      </div>
-    </div>
+        </TotalConnections>
+      </WebContentContainer>
+    </Container>
   );
 }
 

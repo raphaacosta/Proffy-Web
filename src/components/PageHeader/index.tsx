@@ -1,10 +1,15 @@
 import React from 'react';
 
-import './styles.css';
 import { Link } from 'react-router-dom';
 
 import logoImg from '../../assets/images/logo.svg';
 import backIcon from '../../assets/images/icons/back.svg';
+
+import {
+  Header,
+  HeaderContent,
+  TopBarContainer
+} from './styles';
 
 interface PageHeaderProps {
   title: string;
@@ -12,19 +17,19 @@ interface PageHeaderProps {
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
   return (
-    <header className="page-header">
-        <div className="top-bar-container">
+    <Header>
+        <TopBarContainer>
           <Link to="/" >
             <img src={backIcon} alt="Voltar para home"/>
           </Link>
           <img src={logoImg} alt="Proffy"/>
-        </div>
+        </TopBarContainer>
 
-        <div className="header-content">
+        <HeaderContent>
           <strong>{props.title}</strong>
           {props.children}
-        </div>
-      </header>
+        </HeaderContent>
+      </Header>
   );
 }
 
