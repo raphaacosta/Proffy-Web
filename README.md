@@ -1,5 +1,5 @@
 <h1 align="center">
-  <div>
+  <div style="background-color: #7159C1;">
     <img src="./src/assets/images/logo.svg" alt="Proffy" style="width: 250px;">
   </div>
   <a href="https://linktr.ee/rocketseat">
