@@ -1,6 +1,6 @@
 <h1 align="center">
   <div>
-    Proffy
+    <img src="./assets/logo.svg" alt="Proffy"/>
   </div>
   <a href="https://linktr.ee/rocketseat">
     <img src="https://img.shields.io/badge/Made%20by-rocketseat-blueviolet" alt="Made by Rocketseat">
