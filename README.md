@@ -1,6 +1,6 @@
 <h1 align="center">
   <div>
-    <img src="./assets/logo.svg" alt="Proffy"/>
+    <img src="./assets/capa.png" alt="Proffy" width="650px"/>
   </div>
   <a href="https://linktr.ee/rocketseat">
     <img src="https://img.shields.io/badge/Made%20by-rocketseat-blueviolet" alt="Made by Rocketseat">
@@ -8,26 +8,31 @@
   <a href="https://github.com/diego3g">
     <img src="https://img.shields.io/badge/Ministered%20by-Diego%20Fernandes-blueviolet" alt="Ministered by Diego Fernandes">
   </a>
-  <img src="https://img.shields.io/badge/Next%20Level%20Week-2-blueviolet" alt="NLW 2"> 
+  <img src="https://img.shields.io/badge/Next%20Level%20Week-2-blueviolet" alt="NLW 2">
+  <div style="margin-top: 10px;">
+    <a href="https://github.com/raphaacosta/Proffy-API">
+      <img src="https://img.shields.io/badge/Go%20to-API-blueviolet" alt="Proffy API"/>
+    </a>
+  </div>
 </h1>
 
 # Screenshots
 
 ## Web
-<div style="display: flex; flex-direction: column; align-items: center; justfy-content: center;">
+<div align="center">
   <img src="./assets/web-landing-page.png" alt="Web landing page" width="500" style="margin-top: 20px;">
   <img src="./assets/web-teacher-list.png" alt="Web teacher list" width="500">
 </div>
 
 ## Mobile
-<div style="display: flex; align-items: center; justify-content: center;">
+<div align="center">
   <img src="./assets/mobile-landing-page.png" alt="Mobile landing page" height="400" style="margin-right: 10px;">
   <img src="./assets/mobile-teacher-list.png" alt="Mobile teacher list" height="400">
 </div>
 
 # About Project
 
-> Proffy is an application made for the purpose of easily connecting students and teachers.
+> Proffy is an application made for the purpose of easily connecting students and teachers. Through this application, students can find teachers and get in touch with them. For proffys, they can gather students and schedule classes. And even more, with responsiveness, you can open the application on your mobile phone browser or on your computer, making it easier, and delivering a better UX.
 
 # Running 
 
