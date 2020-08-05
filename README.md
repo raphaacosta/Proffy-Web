@@ -22,12 +22,12 @@
 # 📷 Screenshots
 
 ## 💻 Web
-<div style="display: gird; grid-template-columns: 1fr; grid-template-rows: 1fr 1fr;">
-  <div style="display: flex; align-items: center; justify-content: center;">
+<div align="center" style="display: gird; grid-template-columns: 1fr; grid-template-rows: 1fr 1fr;">
+  <div>
     <img src="./assets/web-landing-page.png" alt="Web landing page" width="350" style="margin-right: 10px;">
     <img src="./assets/web-teacher-list.png" alt="Web teacher list" width="350">
   </div>
-  <div style="display: flex; align-items: center; justify-content: center; margin-top: 10px">
+  <div style="margin-top: 10px;">
     <img src="./assets/web-teacher-form.png" alt="Web teacher form" width="350">
   </div>
 </div>
