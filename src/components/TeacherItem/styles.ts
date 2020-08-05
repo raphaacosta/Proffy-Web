@@ -75,7 +75,7 @@ export const Footer = styled.footer`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled.a`
   width: 20rem;
   height: 5.6rem;
   background: var(--color-secundary);
@@ -88,6 +88,7 @@ export const Button = styled.button`
   align-items: center;
   justify-content: space-evenly;
   transition: 0.2s;
+  text-decoration: none;
 
   &:hover {
     background: var(--color-secundary-dark);
