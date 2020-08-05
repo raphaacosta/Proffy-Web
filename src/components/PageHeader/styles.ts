@@ -63,6 +63,7 @@ export const HeaderContent = styled.div`
     margin: 0 auto;
     padding-bottom: 48px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 
