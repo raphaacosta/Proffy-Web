@@ -1,16 +1,16 @@
 <div align="center">
   <div>
-    <img src="./assets/capa.png" alt="Proffy" width="650px"/>
+    <img src="./assets/capa.png" alt="Proffy" width="450px"/>
   </div>
-  <a href="https://linktr.ee/rocketseat">
+  <a target="_blank" href="https://linktr.ee/rocketseat">
     <img src="https://img.shields.io/badge/Made%20by-rocketseat-blueviolet" alt="Made by Rocketseat">
   </a>
-  <a href="https://github.com/diego3g">
+  <a target="_blank" href="https://github.com/diego3g">
     <img src="https://img.shields.io/badge/Ministered%20by-Diego%20Fernandes-blueviolet" alt="Ministered by Diego Fernandes">
   </a>
   <img src="https://img.shields.io/badge/Next%20Level%20Week-2-blueviolet" alt="NLW 2">
   <div style="margin-top: 10px;">
-    <a href="https://github.com/raphaacosta/Proffy-API">
+    <a target="_blank" href="https://github.com/raphaacosta/Proffy-API">
       <img src="https://img.shields.io/badge/Go%20to-API-blueviolet" alt="Proffy API"/>
     </a>
     <h2>
