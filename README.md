@@ -22,15 +22,21 @@
 # 📷 Screenshots
 
 ## 💻 Web
-<div align="center">
-  <img src="./assets/web-landing-page.png" alt="Web landing page" width="500" style="margin-top: 20px;">
-  <img src="./assets/web-teacher-list.png" alt="Web teacher list" width="500">
+<div style="display: gird; grid-template-columns: 1fr; grid-template-rows: 1fr 1fr;">
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <img src="./assets/web-landing-page.png" alt="Web landing page" width="350" style="margin-right: 10px;">
+    <img src="./assets/web-teacher-list.png" alt="Web teacher list" width="350">
+  </div>
+  <div style="display: flex; align-items: center; justify-content: center; margin-top: 10px">
+    <img src="./assets/web-teacher-form.png" alt="Web teacher form" width="350">
+  </div>
 </div>
 
 ## 📱 Mobile
 <div align="center">
-  <img src="./assets/mobile-landing-page.png" alt="Mobile landing page" height="400" style="margin-right: 10px;">
-  <img src="./assets/mobile-teacher-list.png" alt="Mobile teacher list" height="400">
+  <img src="./assets/mobile-landing-page.png" alt="Mobile landing page" width="200" height="300" style="margin-right: 5px;">
+  <img src="./assets/mobile-teacher-list.png" alt="Mobile teacher list" width="200" height="300">
+  <img src="./assets/mobile-teacher-form.png" alt="Mobile teacher list" width="200" height="300" style="margin-left: 5px;">
 </div>
 
 # 📚 About Project
@@ -48,8 +54,8 @@
  - [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
  - [Typescript](https://www.typescriptlang.org/)
  - [React.js](https://pt-br.reactjs.org/)
- - [styled-components](https://styled-components.com/)
-
+ - [Styled-components](https://styled-components.com/)
+ - [Axios](https://www.npmjs.com/package/axios)
 
 # 👍 Contribute
 
