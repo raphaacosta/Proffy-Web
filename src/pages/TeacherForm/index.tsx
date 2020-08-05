@@ -10,7 +10,13 @@ import warningIcon from '../../assets/images/icons/warning.svg';
 
 import api from '../../services/api';
 
-import './styles.css';
+import {
+  Container,
+  Main,
+  Fieldset,
+  Footer,
+  Button
+} from './styles';
 
 const TeacherForm: React.FC = () => {
   const history = useHistory();
@@ -74,15 +80,15 @@ const TeacherForm: React.FC = () => {
   }
 
   return (
-    <div id="page-teacher-form" className="container">
+    <Container id="page-teacher-form">
       <PageHeader 
         title="Que incrível que você quer dar aulas."
         description="O primeiro passo é preencher o formulário de inscrição"
       />
 
-      <main>
+      <Main>
         <form onSubmit={handleCreateClass}>
-          <fieldset>
+          <Fieldset>
             <legend>Seus dados</legend>
             <Input 
               name="name" 
@@ -109,9 +115,9 @@ const TeacherForm: React.FC = () => {
               onChange={(e) => {setBio(e.target.value) }}
             />
 
-          </fieldset>
+          </Fieldset>
 
-          <fieldset>
+          <Fieldset>
             <legend>Seus dados</legend>
             <Select 
               name="subject" 
@@ -137,9 +143,9 @@ const TeacherForm: React.FC = () => {
               value={cost}
               onChange={(e) => { setCost(e.target.value) }}
             />
-          </fieldset>
+          </Fieldset>
 
-          <fieldset>
+          <Fieldset>
             <legend>
               Horários disponíveis
               <button type="button" onClick={addNewScheduleItem}>
@@ -182,21 +188,21 @@ const TeacherForm: React.FC = () => {
                 </div>
               );
             })}
-          </fieldset>
+          </Fieldset>
 
-          <footer>
+          <Footer>
             <p>
               <img src={warningIcon} alt="Aviso importante"/>
               Importante! <br/>
               preencha todos os dados
             </p>
-            <button type="submit">
+            <Button type="submit">
               Salvar cadastro
-            </button>
-          </footer>
+            </Button>
+          </Footer>
         </form>
-      </main>
-    </div>
+      </Main>
+    </Container>
   );
 }
 
