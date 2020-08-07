@@ -15,7 +15,9 @@ import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 import api from '../../services/api';
 
 import {
+  HeaderContainer,
   Container,
+  SwitchContainer,
   WebContentContainer,
   LogoContainer,
   HeroImage,
@@ -23,6 +25,7 @@ import {
   TotalConnections
 } from './styles';
 import { ThemeContext } from 'styled-components';
+import SwitchComponent from '../../components/Switch';
 
 const Landing = () => {
   const { title } = useContext(ThemeContext);
@@ -37,6 +40,10 @@ const Landing = () => {
   }, []);
 
   return (
+    <HeaderContainer>
+      <SwitchContainer>
+        <SwitchComponent />
+      </SwitchContainer>
     <Container>
       <WebContentContainer>
         <LogoContainer>
@@ -83,6 +90,7 @@ const Landing = () => {
         </TotalConnections>
       </WebContentContainer>
     </Container>
+    </HeaderContainer>
   );
 }
 

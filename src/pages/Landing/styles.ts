@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+export const HeaderContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-primary);
+
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -23,6 +32,18 @@ export const Container = styled.div`
         "buttons buttons total"
       ;
     }
+  }
+`;
+
+export const SwitchContainer = styled.div`
+  margin-top: 20px;
+
+
+  @media (min-width: 1100px) {
+    max-width: 1100px;
+    margin-left: 30%;
+
+    justify-content: end;
   }
 `;
 
