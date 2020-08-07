@@ -58,13 +58,13 @@ export const Fieldset = styled.fieldset`
     > button {
       background: none;
       border: none;
-      color: var(--color-primary);
+      color: ${({ theme }) => theme.title === 'light' ? theme.colors.primary : theme.colors.background};
       font: 700 1.6rem Archivo;
       cursor: pointer;
       transition: color 0.2s;
 
       &:hover {
-        color: var(--color-primary-dark);
+        color: ${({ theme }) => theme.title === 'light' ? theme.colors.primaryLighter : theme.colors.primaryLighter};
       }
     }
   }

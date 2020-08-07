@@ -17,6 +17,7 @@ export const SelectBlock = styled.div`
     margin-top: 0.8rem;
     border-radius: 0.8rem;
     background: var(--color-input-background);
+    color: ${({ theme }) => theme.title === 'light' ? '#000' : theme.colors.textBase};
     border: 1px solid var(--color-line-in-white);
     outline: 0;
     padding: 0 1.6rem;
@@ -27,7 +28,7 @@ export const SelectBlock = styled.div`
     width: calc(100% - 3.2rem);
     height: 2px;
     content:'';
-    background: var(--color-primary-light);
+    background: ${({ theme }) => theme.title === 'light' ? theme.colors.primaryLight : '#FF79C6'};
     position: absolute;
     left: 1.6rem;
     right: 1.6rem;

@@ -60,7 +60,7 @@ export const Footer = styled.footer`
   justify-content: space-between;
 
   > p strong {
-    color: var(--color-primary);
+    color: ${({ theme }) => theme.title === 'light' ? theme.colors.primaryLight : '#FF79C6'};
     font-size: 1.6rem;
     display: block;
   }

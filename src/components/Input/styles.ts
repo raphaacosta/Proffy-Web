@@ -27,7 +27,7 @@ export const InputBlock = styled.div`
     width: calc(100% - 3.2rem);
     height: 2px;
     content:'';
-    background: var(--color-primary-light);
+    background: ${({ theme }) => theme.title === 'light' ? theme.colors.primaryLight : '#FF79C6'};
     position: absolute;
     left: 1.6rem;
     right: 1.6rem;

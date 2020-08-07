@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
+import whatsappIconDark from '../../assets/images/icons/whatsapp-dark.svg';
 
 import api from '../../services/api';
 
@@ -10,6 +11,7 @@ import {
   Footer,
   Button
 } from './styles';
+import { ThemeContext } from 'styled-components';
 
 export interface Teacher {
   id: number;
@@ -26,6 +28,7 @@ interface TeacherItemProps {
 }
 
 const TeacherItem: React.FC<TeacherItemProps> = ({teacher}) => {
+  const { title } = useContext(ThemeContext);
   const createNewConnection = async () => {
     await api.post('/connections', {
       user_id: teacher.id,
@@ -51,7 +54,10 @@ const TeacherItem: React.FC<TeacherItemProps> = ({teacher}) => {
               <strong>R$ {teacher.cost},00</strong>
             </p>
             <Button target="_blank" onClick={createNewConnection} href={`https://wa.me/${teacher.whatsapp}`}>
-              <img src={whatsappIcon} alt="Whatsapp"/>
+              {title === 'light' ? 
+              <img src={whatsappIcon} alt="Whatsapp"/> :
+              <img src={whatsappIconDark} alt="Whatsapp"/>
+              }
               Entrar em contato
             </Button>
           </Footer>

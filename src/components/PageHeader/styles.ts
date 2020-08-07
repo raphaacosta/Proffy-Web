@@ -37,6 +37,24 @@ export const TopBarContainer = styled.div`
   }
 `;
 
+export const SwitchContainer = styled.div`
+  width: 80%;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: 700px){
+    max-width: 1100px;
+  }
+`;
+
+export const Alinhador = styled.div`
+  width: 50px;
+  height: 50px;
+`;
+
 export const HeaderContent = styled.div`
   width: 90%;
   margin: 0 auto;
