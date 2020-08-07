@@ -33,11 +33,21 @@
 </div>
 
 ## 📱 Mobile
+
+### 💡 Light
 <div align="center">
   <img src="./assets/mobile-landing-page.png" alt="Mobile landing page" width="200" height="300" style="margin-right: 5px;">
   <img src="./assets/mobile-teacher-list.png" alt="Mobile teacher list" width="200" height="300">
   <img src="./assets/mobile-teacher-form.png" alt="Mobile teacher list" width="200" height="300" style="margin-left: 5px;">
 </div>
+
+### ⚫ Dark (based on [Omni](https://github.com/getomni))
+<div align="center">
+  <img src="./assets/mobile-landing-page-dark.png" alt="Mobile landing page" width="200" height="300" style="margin-right: 5px;">
+  <img src="./assets/mobile-teacher-list-dark.png" alt="Mobile teacher list" width="200" height="300">
+  <img src="./assets/mobile-teacher-form-dark.png" alt="Mobile teacher list" width="200" height="300" style="margin-left: 5px;">
+</div>
+
 
 # 📚 About Project
 
