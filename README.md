@@ -13,6 +13,9 @@
     <a target="_blank" href="https://github.com/raphaacosta/Proffy-API">
       <img src="https://img.shields.io/badge/Go%20to-API-blueviolet" alt="Proffy API"/>
     </a>
+    <a href="https://github.com/raphaacosta/Proffy-Mobile">
+      <img src="https://img.shields.io/badge/Go%20to-Mobile-blueviolet" alt="Proffy Mobile"/>
+    </a>
     <h2>
       Made with 💜
     </h2>
