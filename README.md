@@ -22,14 +22,17 @@
 # 📷 Screenshots
 
 ## 💻 Web
-<div align="center" style="display: gird; grid-template-columns: 1fr; grid-template-rows: 1fr 1fr;">
+<div align="center" style="display: gird; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); gap: 10px 20px;">
   <div>
-    <img src="./assets/web-landing-page.png" alt="Web landing page" width="350" style="margin-right: 10px;">
+    <img src="./assets/web-landing-page.png" alt="Web landing page" width="350">
+    <img src="./assets/web-landing-page-dark.png" alt="Web landing page" width="350">
     <img src="./assets/web-teacher-list.png" alt="Web teacher list" width="350">
-  </div>
-  <div style="margin-top: 10px;">
+    <img src="./assets/web-teacher-list-dark.png" alt="Web teacher list" width="350">
     <img src="./assets/web-teacher-form.png" alt="Web teacher form" width="350">
+    <img src="./assets/web-teacher-form-dark.png" alt="Web teacher form" width="350">
   </div>
+    
+  
 </div>
 
 ## 📱 Mobile
