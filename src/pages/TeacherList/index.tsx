@@ -4,6 +4,7 @@ import PageHeader from '../../components/PageHeader';
 import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
+// import smileIcon from '../../assets/images/icons/smile.svg';
 
 import api from '../../services/api';
 
@@ -19,7 +20,6 @@ const TeacherList: React.FC = () => {
   const [subject, setSubject] = useState('');
   const [week_day, setWeek_day] = useState('');
   const [time, setTime] = useState('');
-
 
   const searchTeachers = async (e: FormEvent) => {
     e.preventDefault();
@@ -48,14 +48,14 @@ const TeacherList: React.FC = () => {
             options={[
               { value: 'Artes', label: 'Artes'},
               { value: 'Biologia', label: 'Biologia'},
-              { value: 'Química', label: 'Química'},
               { value: 'Educação Física', label: 'Educação Física'},
               { value: 'Física', label: 'Física'},
               { value: 'Geografia', label: 'Geografia'},
               { value: 'História', label: 'História'},
+              { value: 'Inglês', label: 'Inglês'},
               { value: 'Matemática', label: 'Matemática'},
               { value: 'Português', label: 'Português'},
-              { value: 'Inglês', label: 'Inglês'},
+              { value: 'Química', label: 'Química'},
             ]}
           />
           <Select 
