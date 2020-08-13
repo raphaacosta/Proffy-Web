@@ -16,8 +16,3 @@ export const SwitchContainer = styled.div`
     width: 80%;
   }
 `;
-
-export const Alinhador = styled.div`
-  width: 50px;
-  height: 50px;
-`;

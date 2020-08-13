@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { Alinhador, SwitchContainer } from './styles';
+import { SwitchContainer } from './styles';
 import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
 import { useTheme } from '../../hooks/theme';
@@ -13,7 +13,6 @@ const SwitchComponent: React.FC = () => {
 
   return (
     <SwitchContainer>
-      <Alinhador></Alinhador>
       <Switch 
           className="switch"
           onChange={toggleTheme}
