@@ -11,18 +11,23 @@ import studyIconDark from '../../assets/images/icons/study-dark.svg';
 import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
 import giveClassesIconDark from '../../assets/images/icons/giveclasses-dark.svg';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
+import logOutIcon from '../../assets/images/icons/sair.svg';
 
 import api from '../../services/api';
 
 import {
   HeaderContainer,
   Container,
+  LogOutButton,
   SwitchContainer,
   WebContentContainer,
   LogoContainer,
   HeroImage,
   ButtonsContainer,
-  TotalConnections
+  Message,
+  TotalConnections,
+  TopBarContainer,
+  TopBar
 } from './styles';
 import { ThemeContext } from 'styled-components';
 import SwitchComponent from '../../components/Switch';
@@ -41,9 +46,18 @@ const Landing = () => {
 
   return (
     <HeaderContainer>
-      <SwitchContainer>
-        <SwitchComponent />
-      </SwitchContainer>
+      <TopBarContainer>
+        <TopBar>
+          <SwitchContainer>
+            <LogOutButton>
+              <Link to="/login">
+                <img src={logOutIcon} alt="Sair"/>
+              </Link>
+            </LogOutButton>
+            <SwitchComponent />
+          </SwitchContainer>
+        </TopBar>
+      </TopBarContainer>
     <Container>
       <WebContentContainer>
         <LogoContainer>
@@ -65,7 +79,14 @@ const Landing = () => {
             alt="Plataforma de estudos"
           />
         )}
-
+        <Message>
+          <p>Seja bem-vindo.<br/>
+            <strong> O que deseja fazer?</strong>
+          </p>
+        </Message>
+        <TotalConnections>
+          Total de {totalConnections} conexões já realizadas <img src={purpleHeartIcon} alt="Coração roxo"/>
+        </TotalConnections>
         <ButtonsContainer>
           <Link to="/study" className="study">
              {title === 'light' ? (
@@ -84,10 +105,6 @@ const Landing = () => {
              Dar aula
           </Link>
         </ButtonsContainer>
-
-        <TotalConnections>
-          Total de {totalConnections} conexões já realizadas <img src={purpleHeartIcon} alt="Coração roxo"/>
-        </TotalConnections>
       </WebContentContainer>
     </Container>
     </HeaderContainer>
