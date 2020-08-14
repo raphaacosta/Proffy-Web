@@ -53,6 +53,15 @@ export const Form = styled.form`
 export const List = styled.main`
   margin: 3.2rem auto;
   width: 90%;
+  display: flex;
+  justify-content: center;
+
+  > h1 {
+    max-width: 35rem;
+    margin-top: 10rem;
+    text-align: center;
+    font: 700 3rem Archivo;
+  }
 
   @media (min-width: 700px) {
     padding: 3.2rem 0;

@@ -16,6 +16,7 @@ import {
 
 const TeacherList: React.FC = () => {
   const [teachers, setTeachers] = useState([]);
+  const [thereAreTeachers, setThereAreTeachers] = useState(false);
 
   const [subject, setSubject] = useState('');
   const [week_day, setWeek_day] = useState('');
@@ -31,8 +32,12 @@ const TeacherList: React.FC = () => {
         time,
       }
     });
-
-    setTeachers(response.data);
+    if(!response || response.data === []) {
+      setThereAreTeachers(false);
+    } else {
+      setTeachers(response.data);
+      setThereAreTeachers(true);
+    }
   }
 
   const title = "Estes são os proffys disponíveis.";
@@ -86,10 +91,13 @@ const TeacherList: React.FC = () => {
           </button>
         </Form>
       </PageHeader>
-
+      
       <List>
+        {!thereAreTeachers && (
+          <h1>Nenhum proffy encontrado com sua pesquisa.</h1>
+        )}
         {teachers.map((teacher: Teacher) => {
-          return <TeacherItem key={teacher.id} teacher={teacher} />
+          return <TeacherItem key={teacher.id} teacher={teacher} /> 
         })}
       </List>
     </Container>
