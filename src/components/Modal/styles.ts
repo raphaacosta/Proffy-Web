@@ -36,7 +36,7 @@ export const Content = styled.div`
   color: var(--color-title-in-primary);
 
   > p {
-    max-width: 380px;
+    max-width: 500px;
     margin-top: 10px;
     text-align: center;
   }
@@ -57,7 +57,7 @@ export const Content = styled.div`
   }
 
   @media(min-width: 700px) {
-    max-width: 400px;
+    max-width: 550px;
   }
 `;
 
