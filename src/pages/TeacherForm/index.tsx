@@ -17,9 +17,11 @@ import {
   Footer,
   Button
 } from './styles';
+import Modal from '../../components/Modal';
 
 const TeacherForm: React.FC = () => {
   const history = useHistory();
+  const [success, setSucces] = useState(true);
   
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
@@ -60,22 +62,34 @@ const TeacherForm: React.FC = () => {
   
   const handleCreateClass = (e: FormEvent) => {
     e.preventDefault();
-
-    api.post('/classes', {
-      name,
-      avatar,
-      whatsapp,
-      bio,
-      subject,
-      cost: Number(cost),
-      schedule: scheduleItems
-    }).then(() => {
-      alert('Cadastro realizado com sucesso!');
-
-      history.push('/');
-    }).catch(() => {
-      alert('Erro no cadastro');
-    })
+    
+    try {
+      if(!name || !avatar || !whatsapp || !bio || !subject || !cost || !scheduleItems) {
+        alert('Preencha todos os dados');
+      }
+      else {
+        api.post('/classes', {
+          name,
+          avatar,
+          whatsapp,
+          bio,
+          subject,
+          cost: Number(cost),
+          schedule: scheduleItems
+        }).then(() => {
+          alert('Cadastro realizado com sucesso!');
+    
+          setSucces(true);
+          history.push('/');
+        }).catch(() => {
+          setSucces(false);
+          alert('Erro no cadastro');
+        }) 
+      }
+    } catch(err) {
+      setSucces(false);
+      alert('Erro ao cadastrar iformações');
+    }
 
   }
 
@@ -93,24 +107,28 @@ const TeacherForm: React.FC = () => {
             <Input 
               name="name" 
               label="Nome completo" 
+              required
               value={name} 
               onChange={(e) => {setName(e.target.value) }}
             />
             <Input 
               name="avatar" 
               label="Avatar"
+              required
               value={avatar} 
               onChange={(e) => {setAvatar(e.target.value) }}
             />
             <Input 
               name="whatsapp" 
               label="Whatsapp"
+              required
               value={whatsapp} 
               onChange={(e) => {setWhatsapp(e.target.value) }}
             />
             <Textarea 
               name="bio" 
               label="Biografia"
+              required
               value={bio} 
               onChange={(e) => {setBio(e.target.value) }}
             />
@@ -122,6 +140,7 @@ const TeacherForm: React.FC = () => {
             <Select 
               name="subject" 
               label="Matéria"
+              required
               value={subject}
               onChange={(e) => { setSubject(e.target.value) }}
               options={[
@@ -139,7 +158,8 @@ const TeacherForm: React.FC = () => {
             />
             <Input 
               name="cost" 
-              label="Custo da sua hora por aula" 
+              label="Custo da sua hora por aula"
+              required 
               value={cost}
               onChange={(e) => { setCost(e.target.value) }}
             />
@@ -159,6 +179,7 @@ const TeacherForm: React.FC = () => {
                   <Select 
                     name="week_day" 
                     label="Dia da semana"
+                    required
                     value={scheduleItem.week_day}
                     onChange={e => setScheduleItemValue(index, 'week_day', e.target.value)}
                     options={[
@@ -174,6 +195,7 @@ const TeacherForm: React.FC = () => {
                   <Input 
                     name="from" 
                     label="Das" 
+                    required
                     type="time" 
                     value={scheduleItem.from}
                     onChange={e => setScheduleItemValue(index, 'from', e.target.value)}
@@ -181,6 +203,7 @@ const TeacherForm: React.FC = () => {
                   <Input 
                     name="to" 
                     label="Até" 
+                    required
                     type="time" 
                     value={scheduleItem.to}
                     onChange={e => setScheduleItemValue(index, 'to', e.target.value)}
@@ -202,6 +225,15 @@ const TeacherForm: React.FC = () => {
           </Footer>
         </form>
       </Main>
+      {success && (
+        <Modal 
+          title="Cadastro salvo!" 
+          description="Tudo certo, seu cadastro está na nossa lista de professores. Agora é só ficar de olho no seu WhatsApp." 
+          isAuthenticaded={true} 
+          buttonText="Acessar lista"
+          navigateTo="/"
+        />
+      )}
     </Container>
   );
 }
