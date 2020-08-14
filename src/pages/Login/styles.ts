@@ -190,14 +190,14 @@ export const InputContainer = styled.div`
   }
 
   &:focus-within::after {
-    width: calc(100% - 3.2rem);
-    height: 2px;
+    width: 2px;
+    height: calc(100% - 2.2rem);
     content:'';
     background: ${({ theme }) => theme.title === 'light' ? theme.colors.primaryLight : '#FF79C6'};
     position: absolute;
-    left: 1.6rem;
-    right: 1.6rem;
-    bottom: 0;
+    left: 0;
+    top: 1.6rem;
+    bottom: 1.6rem;
   }
 
   @media (min-width: 700px) {
