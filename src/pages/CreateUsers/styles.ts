@@ -107,16 +107,6 @@ export const CheckBoxContainer = styled.div`
   }
 `;
 
-export const CheckBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  > label {
-    margin-left: 10px;
-  }
-`;
-
 export const FormBox = styled.div`
   display: flex;
   margin: 0 auto;
@@ -132,13 +122,14 @@ export const FormBox = styled.div`
     height: 50vh;
   }
 
-  @media (min-width: 1100px) {
+  @media (min-width: 1400px) {
     height: 40vh;
     width: 30;
   }
 `;
 
 export const InputContainer = styled.div`
+  position: relative;
   width: 70vw;
   
   > input {
@@ -164,14 +155,14 @@ export const InputContainer = styled.div`
   }
 
   &:focus-within::after {
-    width: calc(100% - 3.2rem);
-    height: 2px;
+    width: 2px;
+    height: calc(100% - 2.2rem);
     content:'';
     background: ${({ theme }) => theme.title === 'light' ? theme.colors.primaryLight : '#FF79C6'};
     position: absolute;
-    left: 1.6rem;
-    right: 1.6rem;
-    bottom: 0;
+    left: 0;
+    top: 1.6rem;
+    bottom: 1.6rem;
   }
 
   @media (min-width: 700px) {
@@ -205,6 +196,10 @@ export const Button = styled.button`
   text-decoration: none;
   transition: background-color 0.2s;
   margin-top: 3.2rem;
+
+  > a {
+    text-decoration: none;
+  }
 
   &:hover {
     background-color: var(--color-secundary-dark);

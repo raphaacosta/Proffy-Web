@@ -7,6 +7,7 @@ import logoDark from '../../assets/images/logo-dark.svg';
 import backgrounImg from '../../assets/images/background.svg';
 import SwitchComponent from '../../components/Switch';
 import backIcon from '../../assets/images/icons/back.svg';
+import Modal from '../../components/Modal';
 
 import {
   Container,
@@ -14,18 +15,18 @@ import {
   Header,
   Intro,
   CheckBoxContainer,
-  CheckBox,
   Button,
   FormBox,
   InputContainer,
   DefaultSide,
   LogoContainer,
 } from './styles';
-import Modal from '../../components/Modal';
+import Select from '../../components/Select';
 
 const CreateUsers: React.FC = () => {
   const { title } = useContext(ThemeContext);
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
+  const [accessType, setAccessType] = useState('');
 
   return (
     <Container>
@@ -41,14 +42,16 @@ const CreateUsers: React.FC = () => {
           <p>Preencha os dados abaixo para começar.</p>
         </Intro>
         <CheckBoxContainer>
-          <CheckBox className="checkbox">
-            <input type="checkbox" name="student"/>
-            <label htmlFor="student">Sou estudante</label>
-          </CheckBox>
-          <CheckBox className="checkbox">
-            <input type="checkbox" name="poffy"/>
-            <label htmlFor="poffy">Sou proffy</label>
-          </CheckBox>
+          <Select 
+            name="usertype"
+            label="Eu sou"
+            value={accessType}
+            onChange={(e) => {setAccessType(e.target.value)}}
+            options={[
+              { value: 'proffy', label: 'Proffy'},
+              { value: 'student', label: 'Estudante'}
+            ]}
+          />
         </CheckBoxContainer>
         <FormBox>
         <InputContainer className="input-container">
@@ -83,8 +86,10 @@ const CreateUsers: React.FC = () => {
               required 
             />
           </InputContainer>
-          <Button>
-            Concluir cadastro
+          <Button onClick={() => setSuccess(true)}>
+            <Link to="/login">
+              Concluir cadastro
+            </Link>
           </Button>
         </FormBox>
       </RegisterSide>
