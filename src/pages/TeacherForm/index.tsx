@@ -21,7 +21,7 @@ import Modal from '../../components/Modal';
 
 const TeacherForm: React.FC = () => {
   const history = useHistory();
-  const [success, setSucces] = useState(true);
+  const [success, setSucces] = useState(false);
   
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
