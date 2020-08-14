@@ -14,6 +14,7 @@ interface ModalProps {
   title: string;
   description: string;
   buttonText: string;
+  navigateTo: string;
   isAuthenticaded: boolean;
 }
 
@@ -27,7 +28,7 @@ const Modal: React.FC<ModalProps> = (props) => {
           <p>{props.description}</p>
         </Content>
         <Button onClick={() => ( <Link to="/"/>)}>
-          <Link to="/">{props.buttonText}</Link>
+          <Link to={props.navigateTo}>{props.buttonText}</Link>
         </Button>
       </ImageBox>
     </Container>
