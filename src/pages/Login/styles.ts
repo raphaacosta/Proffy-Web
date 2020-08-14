@@ -79,7 +79,7 @@ export const LogoContainer = styled.div`
 export const FormSide = styled.div`
   width: 100vw;
   height: 70vh;
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,32 +93,54 @@ export const FormSide = styled.div`
   }
 `;
 
-export const SwitchContainer = styled.div`
+export const Header = styled.div`
+  margin-top: 20px;
+  width: 75vw;
+  position: fixed;
+  top: 1;
+  padding: 0 0.10rem;
+  margin: 0 auto;
+  height: 30px;
   display: flex;
-  margin-top: 5px;
-  position: relative;
-  margin-left: 70vw;
-  height: 3rem;
-  width: 70px;
+  justify-content: flex-end;
+  flex-direction: row;
 
-  @media (min-width: 700px) { 
-    margin-top: -150px;
-    margin-left: 30vw;
-    margin-bottom: 150px;
+  @media (min-width: 700px) {
+    width: 35vw;
+    top: 0;
+    margin-top: 20px;
+    padding: 0 0.20rem;
+  }
+
+  @media (min-width: 1100px) {
+    width: 28vw;
   }
 `;
 
 export const Title = styled.div`
+  width: 72vw;
+  height: 15vh;
   display: flex;
-  margin-bottom: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  justify-content: start;
 
-  @media (min-width: 700px) {
-    margin-top: -40px;
-    margin-bottom: 60px;
+  > h1 {
+    font: 700 2.8rem Archivo;
+    margin-bottom: 10px;
   }
 
-  @media (min-width: 1400px) {
-    margin-bottom: 60px;
+  @media (min-width: 700px) {
+    width: 35vw;
+  }
+
+  @media (min-width: 1100px) {
+    width: 20vw;
+    height: 10vh;
+    justify-content: left;
   }
 `;
 
@@ -184,8 +206,13 @@ export const InputContainer = styled.div`
     margin-top: -17px;
   }
 
-  @media (min-width: 1400px){
-    width: 15vw;
+  @media (min-width: 1100px){
+    margin: 0 auto;
+    width: 20vw;
+    
+    > input {
+      height: 5.6rem;
+    }
   }
 `;
 
@@ -219,7 +246,7 @@ export const FormLinks = styled.div`
   }
 
   @media (min-width: 1400px) {
-    width: 15vw;
+    width: 20vw;
     font-size: 1.4rem;
   }
 `;
@@ -249,12 +276,11 @@ export const Button = styled.button`
   }
 
   @media (min-width: 1400px) {
-    width: 20rem;
+    width: 38rem;
   }
 `;
 
 export const PlusInformation = styled.div`
-  /* margin-top: 15px; */
   margin-bottom: 20px;
   width: 80vw;
   display: flex;
@@ -275,7 +301,7 @@ export const PlusInformation = styled.div`
   }
 
   @media (min-width: 1400px) {
-    width: 15vw;
+    width: 20vw;
     margin-top: 60px;
     font-size: 1.8rem;
   }

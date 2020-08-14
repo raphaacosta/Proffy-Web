@@ -13,7 +13,7 @@ import {
   DefaultSide,
   LogoContainer,
   FormSide,
-  SwitchContainer,
+  Header,
   Form,
   Title,
   Button,
@@ -40,9 +40,9 @@ const Login: React.FC = () => {
         </LogoContainer>
       </DefaultSide>
       <FormSide>
-        <SwitchContainer>
+        <Header>
           <SwitchComponent />
-        </SwitchContainer>
+        </Header>
         <Form >
           <Title>
             <h1>Fazer Login.</h1>
