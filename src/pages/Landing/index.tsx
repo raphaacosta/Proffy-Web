@@ -16,8 +16,8 @@ import logOutIcon from '../../assets/images/icons/sair.svg';
 import api from '../../services/api';
 
 import {
-  HeaderContainer,
   Container,
+  ContentContainer,
   LogOutButton,
   SwitchContainer,
   WebContentContainer,
@@ -27,7 +27,8 @@ import {
   Message,
   TotalConnections,
   TopBarContainer,
-  TopBar
+  TopBar,
+  UserProfile
 } from './styles';
 import { ThemeContext } from 'styled-components';
 import SwitchComponent from '../../components/Switch';
@@ -45,9 +46,13 @@ const Landing = () => {
   }, []);
 
   return (
-    <HeaderContainer>
+    <Container>
       <TopBarContainer>
         <TopBar>
+          <UserProfile to="/user-profile">
+            <img src="https://github.com/raphaacosta.png" alt="User Avatar"/>
+            <p>Raphael Costa</p>
+          </UserProfile>
           <SwitchContainer>
             <LogOutButton>
               <Link to="/login">
@@ -58,7 +63,7 @@ const Landing = () => {
           </SwitchContainer>
         </TopBar>
       </TopBarContainer>
-    <Container>
+    <ContentContainer>
       <WebContentContainer>
         <LogoContainer>
           {title === 'light' ? (
@@ -106,8 +111,8 @@ const Landing = () => {
           </Link>
         </ButtonsContainer>
       </WebContentContainer>
+    </ContentContainer>
     </Container>
-    </HeaderContainer>
   );
 }
 

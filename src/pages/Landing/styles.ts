@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.div`
+import { Link } from 'react-router-dom';
+
+export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: var(--color-primary);
@@ -9,7 +11,7 @@ export const HeaderContainer = styled.div`
   flex-direction: column;
 `;
 
-export const Container = styled.div`
+export const ContentContainer = styled.div`
   width: 100vw;
   height: 200vh;
 
@@ -48,7 +50,8 @@ export const Container = styled.div`
 export const TopBarContainer = styled.div`
   width: 100%;
   height: 60px;
-  padding: 1.6rem 0;
+  margin-top: 10px;
+  padding: 0 1.6rem;
   display: flex; 
 
   @media (min-width: 700px) {
@@ -57,12 +60,11 @@ export const TopBarContainer = styled.div`
 `;
 
 export const TopBar = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
   align-items: center;
-  color: var(--color-text-in-primary);
 
   a {
     height: 3.2rem;
@@ -73,31 +75,36 @@ export const TopBar = styled.div`
     }
   }
 
-  & .logo-switch-container {
-    width: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    
-    > img {
-      margin-top: 5px;
-      height: 1.6rem;
-    }
-  }
-
   @media (min-width: 700px){
     max-width: 1100px;
+  }
+`;
 
-    & .logo-switch-container {
+export const UserProfile = styled(Link)`
+  width: 17rem;
+  height: 100%;
+  display: flex;
+  background: transparent;
+  border: 0;
+  align-items: center;
+  justify-content: space-between;
+
+  > img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    margin-right: 0.5rem;
+  }
+
+  > p {
+    display: none;
+  }
+
+  @media (min-width: 1100px) {
+    > p {
+      color: var(--color-text-in-primary);
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-direction: row;
-      > img {
-        margin-left: 10px;
-        height: 2.6rem;
-      }
+      font: 400 1.8rem Poppins;
     }
   }
 `;
@@ -106,16 +113,11 @@ export const SwitchContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50vw;
-  margin-left: 40vw;
-
-  @media (min-width: 700px) {
-    margin-left: 50vw;
-  }
+  width: 18rem;
+  height: 100%;
 
   @media (min-width: 1100px) {
-    max-width: 1100px;
-    display: flex;
+    width: 170px;
   }
 `;
 
