@@ -5,19 +5,22 @@ import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
 import Select from '../../components/Select';
+import Modal from '../../components/Modal';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
+import rocketIcon from '../../assets/images/icons/rocket.svg';
 
 import api from '../../services/api';
 
 import {
   Container,
   Main,
+  Avatar,
   Fieldset,
   Footer,
   Button
 } from './styles';
-import Modal from '../../components/Modal';
+
 
 const TeacherForm: React.FC = () => {
   const history = useHistory();
@@ -97,37 +100,32 @@ const TeacherForm: React.FC = () => {
     <Container id="page-teacher-form">
       <PageHeader 
         title="Que incrível que você quer dar aulas."
-        description="O primeiro passo é preencher o formulário de inscrição"
+        description="O primeiro passo é preencher esse formulário de inscrição"
+        icon={rocketIcon}
+        iconAlt="rocket icon"
+        iconText="Prepare-se! Vai ser o máximo."
+        pageName="Dar aulas"
       />
 
       <Main>
         <form onSubmit={handleCreateClass}>
           <Fieldset>
             <legend>Seus dados</legend>
-            <Input 
-              name="name" 
-              label="Nome completo" 
-              required
-              value={name} 
-              onChange={(e) => {setName(e.target.value) }}
-            />
-            <Input 
-              name="avatar" 
-              label="Avatar"
-              required
-              value={avatar} 
-              onChange={(e) => {setAvatar(e.target.value) }}
-            />
-            <Input 
-              name="whatsapp" 
-              label="Whatsapp"
-              required
-              value={whatsapp} 
-              onChange={(e) => {setWhatsapp(e.target.value) }}
-            />
+            <div className="data-groud">
+              <Avatar src="https://github.com/raphaacosta.png" alt="user avatar"/>
+              <span>Raphael Costa</span>
+              <Input 
+                name="whatsapp" 
+                label="Whatsapp"
+                required
+                value={whatsapp} 
+                onChange={(e) => {setWhatsapp(e.target.value) }}
+              />
+            </div>
             <Textarea 
               name="bio" 
-              label="Biografia"
+              label="Biografia (máximo 300 caracteres)"
+              maxLength={300}
               required
               value={bio} 
               onChange={(e) => {setBio(e.target.value) }}
@@ -136,33 +134,35 @@ const TeacherForm: React.FC = () => {
           </Fieldset>
 
           <Fieldset>
-            <legend>Seus dados</legend>
-            <Select 
-              name="subject" 
-              label="Matéria"
-              required
-              value={subject}
-              onChange={(e) => { setSubject(e.target.value) }}
-              options={[
-                { value: 'Artes', label: 'Artes'},
-                { value: 'Biologia', label: 'Biologia'},
-                { value: 'Química', label: 'Química'},
-                { value: 'Educação Física', label: 'Educação Física'},
-                { value: 'Física', label: 'Física'},
-                { value: 'Geografia', label: 'Geografia'},
-                { value: 'História', label: 'História'},
-                { value: 'Matemática', label: 'Matemática'},
-                { value: 'Português', label: 'Português'},
-                { value: 'Inglês', label: 'Inglês'},
-              ]}
-            />
-            <Input 
-              name="cost" 
-              label="Custo da sua hora por aula"
-              required 
-              value={cost}
-              onChange={(e) => { setCost(e.target.value) }}
-            />
+            <legend>Sobre a aula</legend>
+            <div className="data-groud">
+              <Select 
+                name="subject" 
+                label="Matéria"
+                required
+                value={subject}
+                onChange={(e) => { setSubject(e.target.value) }}
+                options={[
+                  { value: 'Artes', label: 'Artes'},
+                  { value: 'Biologia', label: 'Biologia'},
+                  { value: 'Educação Física', label: 'Educação Física'},
+                  { value: 'Física', label: 'Física'},
+                  { value: 'Geografia', label: 'Geografia'},
+                  { value: 'História', label: 'História'},
+                  { value: 'Inglês', label: 'Inglês'},
+                  { value: 'Matemática', label: 'Matemática'},
+                  { value: 'Português', label: 'Português'},
+                  { value: 'Química', label: 'Química'},
+                ]}
+              />
+              <Input 
+                name="cost" 
+                label="Custo da sua hora por aula"
+                required 
+                value={cost}
+                onChange={(e) => { setCost(e.target.value) }}
+              />
+            </div>
           </Fieldset>
 
           <Fieldset>

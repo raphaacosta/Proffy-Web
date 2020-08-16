@@ -36,12 +36,32 @@ export const Main = styled.main`
   }
 `;
 
+export const Avatar = styled.img`
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 8.5rem;
+`;
+
 export const Fieldset = styled.fieldset`
   border: 0;
   padding: 0 2.4rem;
 
   & + fieldset {
     margin-top: 6.4rem;
+  }
+
+  & .data-groud {
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    > span {
+      margin-left: 2rem;
+      margin-right: 8rem;
+      font: 600 2.5rem Poppins;
+    }
   }
 
   > legend {
@@ -58,7 +78,7 @@ export const Fieldset = styled.fieldset`
     > button {
       background: none;
       border: none;
-      color: ${({ theme }) => theme.title === 'light' ? theme.colors.primary : theme.colors.background};
+      color: ${({ theme }) => theme.title === 'light' ? theme.colors.primary : theme.colors.lineInWhite};
       font: 700 1.6rem Archivo;
       cursor: pointer;
       transition: color 0.2s;
@@ -71,7 +91,9 @@ export const Fieldset = styled.fieldset`
 
   .input-block + .textarea-block,
   .select-block + .input-block {
-    margin-top: 2.4rem;
+    &.input-block {
+      margin-left: 5rem;
+    }
   }
 
   @media (min-width: 700px) {
