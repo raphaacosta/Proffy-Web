@@ -49,7 +49,7 @@ const Landing = () => {
     <Container>
       <TopBarContainer>
         <TopBar>
-          <UserProfile to="/user-profile">
+          <UserProfile to="/profile">
             <img src="https://github.com/raphaacosta.png" alt="User Avatar"/>
             <p>Raphael Costa</p>
           </UserProfile>
