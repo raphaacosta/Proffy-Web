@@ -8,15 +8,17 @@ import Login from './pages/Login';
 import CreateUsers from './pages/CreateUsers';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
+import UserProfile from './pages/UserProfile';
 
 const Routes: React.FC = () => {
   return (
     <BrowserRouter>
-      <Route path="/" component={Landing} exact/>
       <Route path="/login" component={Login} />
       <Route path="/users" component={CreateUsers} />
       <Route path="/forgot-password" component={ForgotPassword} />
       <Route path="/reset-password" component={ResetPassword} />
+      <Route path="/" component={Landing} exact/>
+      <Route path="/profile" component={UserProfile} />
       <Route path="/study" component={TeacherList} />
       <Route path="/give-classes" component={TeacherForm} />
     </BrowserRouter>
