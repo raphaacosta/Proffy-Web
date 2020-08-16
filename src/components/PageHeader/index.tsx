@@ -11,6 +11,8 @@ import logoDark from '../../assets/images/logo-dark.svg';
 import {
   Header,
   HeaderContent,
+  Icon,
+  Text,
   TopBar,
   TopBarContainer
 } from './styles';
@@ -18,9 +20,11 @@ import {
 interface PageHeaderProps {
   title?: string;
   description?: string;
+  background?: string;
   pageName?: string;
-  background?: File;
-  icon?: HTMLImageElement;
+  icon?: string;
+  iconAlt?: string;
+  iconText?: string;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
@@ -33,6 +37,7 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
             <Link to="/" >
               <img src={backIcon} alt="Voltar para home"/>
             </Link>
+            <p>{props.pageName}</p>
             <div className="logo-switch-container">
               <SwitchComponent />
               {title === 'light' ? (
@@ -45,12 +50,17 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
         </TopBarContainer>
 
         <HeaderContent className="header-content">
-          <strong>{props.title}</strong>
-          { props.description && <p>{props.description}</p>}
+          <Text>
+            <strong>{props.title}</strong>
+            { props.description && <p>{props.description}</p>}
+          </Text>
           
           {props.children}
 
-          {props.icon}
+          <Icon>
+            <img src={props.icon} alt={props.iconAlt}/>
+            <p>{props.iconText}</p>
+          </Icon>
         </HeaderContent>
       </Header>
   );

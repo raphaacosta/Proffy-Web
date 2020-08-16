@@ -68,11 +68,21 @@ export const TopBar = styled.div`
   }
 `;
 
-export const HeaderContent = styled.div`
-  width: 90%;
-  margin: 0 auto;
+export const Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40rem;
+  height: 20rem;
   position: relative;
-  margin: 3.2rem auto;
+
+  > p {
+    max-width: 25rem;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: var(--color-text-in-primary);
+    margin-top: 2.4rem;
+  }
 
   > strong {
     font: 700 3.6rem Archivo;
@@ -80,13 +90,38 @@ export const HeaderContent = styled.div`
     color: var(--color-title-in-primary);
   }
 
+  @media (min-width: 700px) {
+    > strong {
+      max-width: 350px;
+    }
+  }
+`;
+
+export const Icon = styled.div`
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 15rem;
+  height: 5rem;
+
   > p {
-    max-width: 30rem;
+    max-width: 10rem;
     font-size: 1.6rem;
     line-height: 2.6rem;
     color: var(--color-text-in-primary);
-    margin-top: 2.4rem;
   }
+
+  @media (min-width: 700px) {
+    display: flex;
+  }
+`;
+
+export const HeaderContent = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  margin: 3.2rem auto;
 
   @media (min-width: 700px) {
     flex: 1;
@@ -95,12 +130,8 @@ export const HeaderContent = styled.div`
     margin-top: 68px;
     padding-bottom: 48px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
-    > strong {
-      max-width: 350px;
-    }
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
