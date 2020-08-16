@@ -26,8 +26,6 @@ const TeacherForm: React.FC = () => {
   const history = useHistory();
   const [success, setSucces] = useState(false);
   
-  const [name, setName] = useState('');
-  const [avatar, setAvatar] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [bio, setBio] = useState('');
 
@@ -67,13 +65,11 @@ const TeacherForm: React.FC = () => {
     e.preventDefault();
     
     try {
-      if(!name || !avatar || !whatsapp || !bio || !subject || !cost || !scheduleItems) {
+      if(!whatsapp || !bio || !subject || !cost || !scheduleItems) {
         alert('Preencha todos os dados');
       }
       else {
         api.post('/classes', {
-          name,
-          avatar,
           whatsapp,
           bio,
           subject,

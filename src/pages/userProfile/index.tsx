@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
@@ -24,8 +24,8 @@ import {
 } from './styles';
 
 const UserProfile: React.FC = () => {
-  const history = useHistory();
-  const [success, setSucces] = useState(false);
+  // const history = useHistory();
+  const [success, setSuccess] = useState(false);
   
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -53,13 +53,13 @@ const UserProfile: React.FC = () => {
   }
 
   const setScheduleItemValue = (position: number, field: string, value: string) => {
-    const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
-      if (index === position) {
-        return { ...scheduleItem, [field]: value };
-      }
+    // const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
+    //   if (index === position) {
+    //     return { ...scheduleItem, [field]: value };
+    //   }
 
-      return scheduleItem;
-    });
+    //   return scheduleItem;
+    // });
   }
 
   return (
@@ -205,7 +205,7 @@ const UserProfile: React.FC = () => {
               Importante! <br/>
               preencha todos os dados
             </p>
-            <Button type="submit">
+            <Button type="submit" onClick={() => {setSuccess(true)}}>
               Salvar cadastro
             </Button>
           </Footer>
