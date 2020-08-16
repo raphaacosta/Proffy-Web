@@ -4,7 +4,7 @@ import PageHeader from '../../components/PageHeader';
 import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
-// import smileIcon from '../../assets/images/icons/smile.svg';
+import smileIcon from '../../assets/images/icons/smile.svg';
 
 import api from '../../services/api';
 
@@ -43,7 +43,13 @@ const TeacherList: React.FC = () => {
   const title = "Estes são os proffys disponíveis.";
   return (
     <Container>
-      <PageHeader title={title}>
+      <PageHeader 
+        title={title} 
+        icon={smileIcon} 
+        iconAlt="smile icon"
+        iconText={`Nós temos 32 proffys.`}
+        pageName="Estudar"
+      >
         <Form onSubmit={searchTeachers}>
         <Select 
             name="subject" 
