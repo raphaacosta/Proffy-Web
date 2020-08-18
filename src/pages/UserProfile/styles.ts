@@ -10,47 +10,96 @@ export const Container = styled.div`
 `;
 
 export const UserInfos = styled.div`
-  margin-top: -5rem;
-  margin-left: -28rem;
-  padding: 0 1.5rem;
-  height: 25rem;
+  margin-top: -20rem;
+  margin-bottom: 10rem;
+  padding: 0 1rem;
+  height: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: var(--color-text-in-primary);
+
+  @media (min-width: 700px) {
+    margin-top: -5rem;
+    margin-left: -28rem;
+    padding: 0 1.5rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-text-in-primary);
+  }
 `;
 
 export const Avatar = styled.div`
-  width: 15rem;
-  height: 15rem;
-  border-radius: 15rem;
+  width: 10rem;
+  height: 10rem;
+  margin-top: -1rem;
+  border-radius: 10rem;
   margin-bottom: 2rem;
   position: relative;
-
-  > img {
+  
+  & .dropzone {
     width: 100%;
     height: 100%;
-    border-radius: 100%;
+    background: #000;
+    border-radius: 50%;
+    margin-top: -4rem;
   }
 
   & .icon {
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
+    right: -0.5rem;
+    bottom: -1rem;
     border-radius: 5rem;
     background-color: #04D361;
     border: 0;
-    
+
     > img {
-      width: 50%;
-      height: 50%;
-      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 3rem;
     }
-    position: absolute;
-    right: -0.5rem;
-    bottom: -1rem;
+  }
+  
+  @media (min-width: 700px) {
+    width: 15rem;
+    height: 15rem;
+    margin: 0 auto;
+    border-radius: 15rem;
+    margin-bottom: 2rem;
+    position: relative;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+    }
+
+    & .icon {
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5rem;
+      background-color: #04D361;
+      border: 0;
+      
+      > img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 5rem;
+      }
+      position: absolute;
+      right: -0.5rem;
+      bottom: -1rem;
+    }
   }
 `;
 
@@ -81,13 +130,34 @@ export const Main = styled.main`
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       column-gap: 1.6rem;
+
+      > button {
+        background: none;
+        border: none;
+        color: #E33D3D;
+        align-self: center;
+        font: 700 1.6rem Archivo;
+        cursor: pointer;
+        transition: color 0.2s;
+
+        &:hover {
+          color: #D70404;
+        }
+      }
     }
-    
     .schedule-item .input-block {
       margin-top: 0 !important;
       margin-bottom: 10px;
     }
   }
+`;
+
+export const Line = styled.div`
+  width: 100%;
+  margin: 2rem 0;
+  height: 1px;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.title === 'light' ? theme.colors.lineInWhite : theme.colors.lineInWhite};
 `;
 
 export const Fieldset = styled.fieldset`
