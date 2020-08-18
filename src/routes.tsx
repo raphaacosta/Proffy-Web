@@ -13,11 +13,11 @@ import UserProfile from './pages/UserProfile';
 const Routes: React.FC = () => {
   return (
     <BrowserRouter>
-      <Route path="/login" component={Login} />
+      <Route path="/" component={Login} exact/>
       <Route path="/users" component={CreateUsers} />
       <Route path="/forgot-password" component={ForgotPassword} />
       <Route path="/reset-password" component={ResetPassword} />
-      <Route path="/" component={Landing} exact/>
+      <Route path="/home" component={Landing}/>
       <Route path="/profile" component={UserProfile} />
       <Route path="/study" component={TeacherList} />
       <Route path="/give-classes" component={TeacherForm} />
