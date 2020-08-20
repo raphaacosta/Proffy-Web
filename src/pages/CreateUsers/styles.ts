@@ -54,10 +54,10 @@ export const Header = styled.div`
 
 export const Intro = styled.div`
   width: 72vw;
-  height: 15vh;
+  height: 10rem;
   display: flex;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 10rem;
   flex-direction: column;
   align-items: left;
   text-align: left;
@@ -79,8 +79,9 @@ export const Intro = styled.div`
 
   @media (min-width: 1100px) {
     width: 28vw;
-    margin-bottom: 50px;
-    height: 10vh;
+    margin-top: -5rem;
+    margin-bottom: 5rem;
+    height: 10rem;
     justify-content: left;
 
     > p {
@@ -92,11 +93,11 @@ export const Intro = styled.div`
 export const UserTypeContainer = styled.div`
   width: 70vw;
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  flex-direction: row;
-  align-items: center;
+  align-items: left;
   font: 400 2rem Archivo;
-  justify-content: space-between;
+  justify-content: center;
 
   & .radio-container {
     display: block;
@@ -107,6 +108,15 @@ export const UserTypeContainer = styled.div`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+  }
+
+  p {
+    font: 400 2rem Archivo;
+    margin-left: 3rem;
+  }
+
+  & .radio-container + .radio-container {
+    margin-top: 2.6rem;
   }
 
   & .radio-container input {
@@ -121,6 +131,7 @@ export const UserTypeContainer = styled.div`
     position: absolute;
     height: 2rem;
     width: 2rem;
+    /* right: 0.1rem; */
     border-radius: 2rem;
     background-color: ${({ theme }) => theme.title === 'light' ? '#CCC' : '#EEE'};
   }
@@ -149,17 +160,16 @@ export const UserTypeContainer = styled.div`
     width: 0.9rem;
     height: 0.9rem;
     border-radius: 50%;
-    background: #FFF;
+    background: #E5E5E5;
   }
 
   @media (min-width: 700px) {
     width: 35vw;
-    margin-bottom: 40px;
+    
   }
 
   @media (min-width: 1100px) {
     width: 28vw;
-    margin-bottom: 0;
   }
 `;
 

@@ -41,13 +41,15 @@ const CreateUsers: React.FC = () => {
           <p>Preencha os dados abaixo para começar.</p>
         </Intro>
         <UserTypeContainer>
-          <label className="radio-container">Proffy
+          <label className="radio-container">
             <input type="radio" name="access-type" checked={true}/>
             <span className="checkmark"></span>
+            <p>Proffy</p>
           </label>
-          <label className="radio-container">Estudante
+          <label className="radio-container">
             <input type="radio" name="access-type"/>
             <span className="checkmark"></span>
+            <p>Estudante</p>
           </label>
         </UserTypeContainer>
         <FormBox>
