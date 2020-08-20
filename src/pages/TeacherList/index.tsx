@@ -44,7 +44,7 @@ const TeacherList: React.FC = () => {
   return (
     <Container>
       <PageHeader 
-        title={title} 
+        pageTitle={title} 
         icon={smileIcon} 
         iconAlt="smile icon"
         iconText={`Nós temos 32 proffys.`}

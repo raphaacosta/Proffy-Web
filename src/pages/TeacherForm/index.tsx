@@ -89,13 +89,12 @@ const TeacherForm: React.FC = () => {
       setSucces(false);
       alert('Erro ao cadastrar iformações');
     }
-
   }
 
   return (
     <Container id="page-teacher-form">
       <PageHeader 
-        title="Que incrível que você quer dar aulas."
+        pageTitle="Que incrível que você quer dar aulas."
         description="O primeiro passo é preencher esse formulário de inscrição"
         icon={rocketIcon}
         iconAlt="rocket icon"
@@ -227,7 +226,7 @@ const TeacherForm: React.FC = () => {
           description="Tudo certo, seu cadastro está na nossa lista de professores. Agora é só ficar de olho no seu WhatsApp." 
           isAuthenticaded={true} 
           buttonText="Acessar lista"
-          navigateTo="/"
+          navigateTo="/home"
         />
       )}
     </Container>
