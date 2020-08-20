@@ -7,6 +7,7 @@ import SwitchComponent from '../Switch';
 import logoImg from '../../assets/images/logo.svg';
 import backIcon from '../../assets/images/icons/back.svg';
 import logoDark from '../../assets/images/logo-dark.svg';
+import backgroundImg from '../../assets/images/profile-background.svg';
 
 import {
   Header,
@@ -18,51 +19,61 @@ import {
 } from './styles';
 
 interface PageHeaderProps {
-  title?: string;
+  pageTitle?: string;
   description?: string;
-  background?: string;
+  background?: boolean;
   pageName?: string;
   icon?: string;
   iconAlt?: string;
   iconText?: string;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = (props) => {
+const PageHeader: React.FC<PageHeaderProps> = ({ 
+  pageTitle, 
+  description,
+  icon,
+  iconAlt,
+  iconText,
+  pageName,
+  background,
+  children
+}) => {
   const { title } = useContext(ThemeContext);
 
   return (
     <Header className="page-header">
-        <TopBarContainer>
-          <TopBar>
-            <Link to="/" >
-              <img src={backIcon} alt="Voltar para home"/>
-            </Link>
-            <p>{props.pageName}</p>
-            <div className="logo-switch-container">
-              <SwitchComponent />
-              {title === 'light' ? (
-                <img src={logoImg} alt="Proffy"/>
-              ) : (
-                <img src={logoDark} alt="Proffy"/>
-              )}     
-            </div>
-          </TopBar>
-        </TopBarContainer>
+      <TopBarContainer>
+        <TopBar>
+          <Link to="/home" >
+            <img src={backIcon} alt="Voltar para home"/>
+          </Link>
+          <p>{pageName}</p>
+          <div className="logo-switch-container">
+            <SwitchComponent />
+            {title === 'light' ? (
+              <img src={logoImg} alt="Proffy"/>
+            ) : (
+              <img src={logoDark} alt="Proffy"/>
+            )}     
+          </div>
+        </TopBar>
+      </TopBarContainer>
 
-        <HeaderContent className="header-content">
-          <Text>
-            <strong>{props.title}</strong>
-            { props.description && <p>{props.description}</p>}
-          </Text>
-          
-          {props.children}
+      <HeaderContent className="header-content">
+        {background && <img src={backgroundImg} alt="background"/>}
+        <Text>
+          <strong>{pageTitle}</strong>
+          { description && <p>{description}</p>}
+        </Text>
+        
+        {children}
 
-          <Icon>
-            <img src={props.icon} alt={props.iconAlt}/>
-            <p>{props.iconText}</p>
-          </Icon>
-        </HeaderContent>
-      </Header>
+        <Icon>
+          <img src={icon} alt={iconAlt}/>
+          <p>{iconText}</p>
+        </Icon>
+      </HeaderContent>
+    </Header>
   );
 }
 

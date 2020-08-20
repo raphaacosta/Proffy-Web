@@ -123,15 +123,24 @@ export const HeaderContent = styled.div`
   position: relative;
   margin: 3.2rem auto;
 
+  > img {
+    display: none;
+  }
+
   @media (min-width: 700px) {
     flex: 1;
     max-width: 740px;
-    margin: 0 auto;
-    margin-top: 68px;
     padding-bottom: 48px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    
+    > img {
+      display: flex;
+      margin-top: -3rem;
+      margin-left: -7rem;
+      width: 90rem;
+    }
   }
 `;
