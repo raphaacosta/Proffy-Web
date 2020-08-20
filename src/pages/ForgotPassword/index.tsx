@@ -29,7 +29,7 @@ const ForgotPassword: React.FC = () => {
     <Container>
       <FormSide>
         <Header>
-          <Link to="/login" >
+          <Link to="/" >
             <img src={backIcon} alt="Voltar para home"/>
           </Link>
           <SwitchComponent />
@@ -48,7 +48,7 @@ const ForgotPassword: React.FC = () => {
             />
           </InputContainer>
           <Button onClick={() => setSuccess(true)}>
-            <Link to="/login">
+            <Link to="/">
               Enviar
             </Link>
           </Button>
@@ -70,7 +70,7 @@ const ForgotPassword: React.FC = () => {
           title="Redefinição enviada!" 
           description="Boa, agora é só checar o e-mail que foi enviado para você redefinir sua senha e aproveitar os estudos."
           buttonText="Voltar ao login"
-          navigateTo="/login"
+          navigateTo="/"
           isAuthenticaded={false}
         />
       )}

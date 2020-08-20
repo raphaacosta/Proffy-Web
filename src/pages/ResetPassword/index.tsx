@@ -52,7 +52,7 @@ const ResetPassword: React.FC = () => {
             />
           </InputContainer>
           <Button onClick={() => setSuccess(true)}>
-            <Link to="/login">
+            <Link to="/">
               Confirmar
             </Link>
           </Button>
@@ -74,7 +74,7 @@ const ResetPassword: React.FC = () => {
           title="Senha redefinida com sucesso!" 
           description="Agora é só logar e utilizar a plataforma."
           buttonText="Voltar ao login"
-          navigateTo="/login"
+          navigateTo="/"
           isAuthenticaded={false}
         />
       )}
