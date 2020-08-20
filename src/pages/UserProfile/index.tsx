@@ -10,7 +10,6 @@ import Dropzone from '../../components/Dropzone';
 import api from '../../services/api';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
-import backgroundImg from '../../assets/images/background.svg';
 import cameraIcon from '../../assets/images/icons/camera.svg';
 
 import { 
@@ -23,9 +22,9 @@ import {
   UserInfos,
   Name,
   Subject,
-  Line
+  Line,
+  DeleteButton
 } from './styles';
-
 
 const UserProfile: React.FC = () => {
   const history = useHistory();
@@ -53,8 +52,7 @@ const UserProfile: React.FC = () => {
         to: '',
       }
     ]);
-
-    scheduleItems.push()
+    scheduleItems.push();
   }
 
   const setScheduleItemValue = (position: number, field: string, value: string) => {
@@ -103,7 +101,7 @@ const UserProfile: React.FC = () => {
     <Container id="page-teacher-form">
       <PageHeader
         pageName="Meu perfil"
-        background={backgroundImg}
+        background={true}
       >
         <UserInfos>
           <Avatar >
@@ -139,20 +137,23 @@ const UserProfile: React.FC = () => {
                 onChange={(e) => {setLastName(e.target.value) }}
               />
             </div>
-            <Input 
-              name="email" 
-              label="E-mail"
-              required
-              value={whatsapp} 
-              onChange={(e) => {setWhatsapp(e.target.value) }}
-            />
-            <Input 
-              name="whatsapp" 
-              label="Whatsapp"
-              required
-              value={whatsapp} 
-              onChange={(e) => {setWhatsapp(e.target.value) }}
-            />
+            <div className="contact-inputs">
+              <Input 
+                name="email" 
+                label="E-mail"
+                required
+                value={whatsapp} 
+                onChange={(e) => {setWhatsapp(e.target.value) }}
+              />
+              <Input 
+                className="whatsapp-input"
+                name="whatsapp" 
+                label="Whatsapp"
+                required
+                value={whatsapp} 
+                onChange={(e) => {setWhatsapp(e.target.value) }}
+              />
+            </div>
             <Textarea 
               name="bio" 
               label="Biografia (máximo 300 caracteres)"
@@ -165,32 +166,34 @@ const UserProfile: React.FC = () => {
 
           <Fieldset>
             <legend>Sobre a aula</legend>
-            <Select 
-              name="subject" 
-              label="Matéria"
-              required
-              value={subject}
-              onChange={(e) => { setSubject(e.target.value) }}
-              options={[
-                { value: 'Artes', label: 'Artes'},
-                { value: 'Biologia', label: 'Biologia'},
-                { value: 'Educação Física', label: 'Educação Física'},
-                { value: 'Física', label: 'Física'},
-                { value: 'Geografia', label: 'Geografia'},
-                { value: 'História', label: 'História'},
-                { value: 'Inglês', label: 'Inglês'},
-                { value: 'Matemática', label: 'Matemática'},
-                { value: 'Português', label: 'Português'},
-                { value: 'Química', label: 'Química'},
-              ]}
-            />
-            <Input 
-              name="cost" 
-              label="Custo da sua hora por aula"
-              required 
-              value={cost}
-              onChange={(e) => { setCost(e.target.value) }}
-            />
+            <div className="class-inputs">
+              <Select 
+                name="subject" 
+                label="Matéria"
+                required
+                value={subject}
+                onChange={(e) => { setSubject(e.target.value) }}
+                options={[
+                  { value: 'Artes', label: 'Artes'},
+                  { value: 'Biologia', label: 'Biologia'},
+                  { value: 'Educação Física', label: 'Educação Física'},
+                  { value: 'Física', label: 'Física'},
+                  { value: 'Geografia', label: 'Geografia'},
+                  { value: 'História', label: 'História'},
+                  { value: 'Inglês', label: 'Inglês'},
+                  { value: 'Matemática', label: 'Matemática'},
+                  { value: 'Português', label: 'Português'},
+                  { value: 'Química', label: 'Química'},
+                ]}
+              />
+              <Input 
+                name="cost" 
+                label="Custo da sua hora por aula"
+                required 
+                value={cost}
+                onChange={(e) => { setCost(e.target.value) }}
+              />
+            </div>
           </Fieldset>
 
           <Fieldset>
@@ -203,45 +206,49 @@ const UserProfile: React.FC = () => {
 
             {scheduleItems.map((scheduleItem, index) => {
               return (
-                <div key={scheduleItem.week_day} className="schedule-item">
-                  <Select 
-                    name="week_day" 
-                    label="Dia da semana"
-                    required
-                    value={scheduleItem.week_day}
-                    onChange={e => setScheduleItemValue(index, 'week_day', e.target.value)}
-                    options={[
-                      { value: '0', label: 'Domingo'},
-                      { value: '1', label: 'Segunda-feita'},
-                      { value: '2', label: 'Terça-feira'},
-                      { value: '3', label: 'Quarta-feira'},
-                      { value: '4', label: 'Quinta-feira'},
-                      { value: '5', label: 'Sexta-feira'},
-                      { value: '6', label: 'Sábado'},
-                    ]}
-                  />
-                  <Input 
-                    name="from" 
-                    label="Das" 
-                    required
-                    type="time" 
-                    value={scheduleItem.from}
-                    onChange={e => setScheduleItemValue(index, 'from', e.target.value)}
-                  />
-                  <Input 
-                    name="to" 
-                    label="Até" 
-                    required
-                    type="time" 
-                    value={scheduleItem.to}
-                    onChange={e => setScheduleItemValue(index, 'to', e.target.value)}
-                  />
-                  <Line />
-                    <button type="button" onClick={() => {}}>
-                      Excluir horário
-                    </button>
-                  <Line />
-                </div>
+                <>
+                  <div key={scheduleItem.week_day} className="schedule-item">
+                    <Select 
+                      name="week_day" 
+                      label="Dia da semana"
+                      required
+                      value={scheduleItem.week_day}
+                      onChange={e => setScheduleItemValue(index, 'week_day', e.target.value)}
+                      options={[
+                        { value: '0', label: 'Domingo'},
+                        { value: '1', label: 'Segunda-feita'},
+                        { value: '2', label: 'Terça-feira'},
+                        { value: '3', label: 'Quarta-feira'},
+                        { value: '4', label: 'Quinta-feira'},
+                        { value: '5', label: 'Sexta-feira'},
+                        { value: '6', label: 'Sábado'},
+                      ]}
+                    />
+                    <Input 
+                      name="from" 
+                      label="Das" 
+                      required
+                      type="time" 
+                      value={scheduleItem.from}
+                      onChange={e => setScheduleItemValue(index, 'from', e.target.value)}
+                    />
+                    <Input 
+                      name="to" 
+                      label="Até" 
+                      required
+                      type="time" 
+                      value={scheduleItem.to}
+                      onChange={e => setScheduleItemValue(index, 'to', e.target.value)}
+                    />
+                  </div>
+                    <DeleteButton>
+                    <Line />
+                      <button type="button" onClick={() => {}}>
+                        Excluir horário
+                      </button>
+                    <Line />
+                  </DeleteButton>
+                </>
               );
             })}
           </Fieldset>

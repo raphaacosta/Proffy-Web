@@ -20,11 +20,12 @@ export const UserInfos = styled.div`
   color: var(--color-text-in-primary);
 
   @media (min-width: 700px) {
-    margin-top: -5rem;
-    margin-left: -28rem;
+    margin-top: -2rem;
+    margin-left: 28rem;
     padding: 0 1.5rem;
     height: 25rem;
     display: flex;
+    position: absolute;
     flex-direction: column;
     align-items: center;
     color: var(--color-text-in-primary);
@@ -32,54 +33,37 @@ export const UserInfos = styled.div`
 `;
 
 export const Avatar = styled.div`
-  width: 10rem;
-  height: 10rem;
-  margin-top: -1rem;
-  border-radius: 10rem;
-  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
   
   & .dropzone {
     width: 100%;
     height: 100%;
-    background: #000;
     border-radius: 50%;
-    margin-top: -4rem;
   }
 
   & .icon {
-    width: 3rem;
-    height: 3rem;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: -0.5rem;
-    bottom: -1rem;
-    border-radius: 5rem;
-    background-color: #04D361;
-    border: 0;
+    display: none;
 
     > img {
-      width: 3rem;
-      height: 3rem;
+      width: 5rem;
+      height: 5rem;
       border-radius: 3rem;
     }
   }
   
   @media (min-width: 700px) {
-    width: 15rem;
-    height: 15rem;
+    width: 13rem;
+    height: 13rem;
     margin: 0 auto;
-    border-radius: 15rem;
-    margin-bottom: 2rem;
+    border-radius: 50rem;
+    margin-top: -1.5rem;
+    margin-bottom: 2.5rem;
     position: relative;
-
-    > img {
-      width: 100%;
-      height: 100%;
-      border-radius: 100%;
-    }
 
     & .icon {
       width: 5rem;
@@ -97,19 +81,19 @@ export const Avatar = styled.div`
         border-radius: 5rem;
       }
       position: absolute;
-      right: -0.5rem;
-      bottom: -1rem;
+      left: 11rem;
+      bottom: -0.1rem;
     }
   }
 `;
 
 export const Name = styled.h1`
-  font: 700 2rem Archivo;
+  font: 700 2.6rem Archivo;
   margin-bottom: 0.5rem;
 `;
 
 export const Subject = styled.span`
-  font: 400 1.6rem Archivo;
+  font: 400 2rem Archivo;
 `;
 
 export const Main = styled.main`
@@ -119,41 +103,49 @@ export const Main = styled.main`
   border-radius: 0.8rem;
   margin: -3.2rem auto 3.2rem;
   padding-top: 6.4rem;
-  overflow: hidden;
 
   > label {
     color: var(--color-text-complement);
   }
 
   @media (min-width: 700px) {
+    position: relative;
     .schedule-item {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       column-gap: 1.6rem;
-
-      > button {
-        background: none;
-        border: none;
-        color: #E33D3D;
-        align-self: center;
-        font: 700 1.6rem Archivo;
-        cursor: pointer;
-        transition: color 0.2s;
-
-        &:hover {
-          color: #D70404;
-        }
-      }
     }
     .schedule-item .input-block {
       margin-top: 0 !important;
       margin-bottom: 10px;
     }
   }
+
+`;
+
+export const DeleteButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  
+  > button {
+    background: none;
+    border: none;
+    width: 28rem;
+    color: #E33D3D;
+    font: 700 1.6rem Archivo;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #D70404;
+    }
+  }
 `;
 
 export const Line = styled.div`
-  width: 100%;
+  width: 80%;
   margin: 2rem 0;
   height: 1px;
   border-radius: 50%;
@@ -203,6 +195,53 @@ export const Fieldset = styled.fieldset`
 
   @media (min-width: 700px) {
     padding: 0 6.4rem;
+
+    & .name-inputs {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      input {
+        width: 28.8rem;
+      }
+    }
+
+    .contact-inputs {
+      display: flex;
+      flex-direction: row;
+      margin: 2.4rem 0;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      
+      input {
+        width: 35rem;
+      }
+
+      & .whatsapp-input {
+        width: 20rem;
+      }
+    }
+
+    .input-block + .input-block, 
+    .select-block + .input-block {
+      margin-top: 0;
+    }
+
+    & .class-inputs {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      select {
+        width: calc(100% + 5rem);
+      }
+    }
+      
   }
 `;
 
