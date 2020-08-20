@@ -14,25 +14,24 @@ import {
   RegisterSide,
   Header,
   Intro,
-  CheckBoxContainer,
+  UserTypeContainer,
   Button,
   FormBox,
   InputContainer,
   DefaultSide,
   LogoContainer,
 } from './styles';
-import Select from '../../components/Select';
 
 const CreateUsers: React.FC = () => {
   const { title } = useContext(ThemeContext);
   const [success, setSuccess] = useState(false);
-  const [accessType, setAccessType] = useState('');
+  // const [accessType, setAccessType] = useState('');
 
   return (
     <Container>
       <RegisterSide>
         <Header>
-          <Link to="/login" >
+          <Link to="/" >
             <img src={backIcon} alt="Voltar para home"/>
           </Link>
           <SwitchComponent />
@@ -41,18 +40,16 @@ const CreateUsers: React.FC = () => {
           <h1>Cadastro</h1>
           <p>Preencha os dados abaixo para começar.</p>
         </Intro>
-        <CheckBoxContainer>
-          <Select 
-            name="usertype"
-            label="Eu sou"
-            value={accessType}
-            onChange={(e) => {setAccessType(e.target.value)}}
-            options={[
-              { value: 'proffy', label: 'Proffy'},
-              { value: 'student', label: 'Estudante'}
-            ]}
-          />
-        </CheckBoxContainer>
+        <UserTypeContainer>
+          <label className="radio-container">Proffy
+            <input type="radio" name="access-type" checked={true}/>
+            <span className="checkmark"></span>
+          </label>
+          <label className="radio-container">Estudante
+            <input type="radio" name="access-type"/>
+            <span className="checkmark"></span>
+          </label>
+        </UserTypeContainer>
         <FormBox>
         <InputContainer className="input-container">
             <input 
@@ -87,7 +84,7 @@ const CreateUsers: React.FC = () => {
             />
           </InputContainer>
           <Button onClick={() => setSuccess(true)}>
-            <Link to="/login">
+            <Link to="/">
               Concluir cadastro
             </Link>
           </Button>
@@ -109,7 +106,7 @@ const CreateUsers: React.FC = () => {
           title="Cadastro Concluído" 
           description="Agora você faz parte da plataforma da Proffy. Tenha uma ótima experiência."
           buttonText="Fazer Login"
-          navigateTo="/login"
+          navigateTo="/"
           isAuthenticaded={false}
         />
       )}

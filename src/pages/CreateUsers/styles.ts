@@ -89,12 +89,68 @@ export const Intro = styled.div`
   }
 `;
 
-export const CheckBoxContainer = styled.div`
+export const UserTypeContainer = styled.div`
   width: 70vw;
   display: flex;
   margin: 0 auto;
   flex-direction: row;
+  align-items: center;
+  font: 400 2rem Archivo;
   justify-content: space-between;
+
+  & .radio-container {
+    display: block;
+    padding: 0 1.6rem;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  & .radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  & .checkmark {
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 2rem;
+    background-color: ${({ theme }) => theme.title === 'light' ? '#CCC' : '#EEE'};
+  }
+
+  & .radio-container:hover input ~ .checkmark {
+    background-color: ${({ theme }) => theme.title === 'light' ? '#999' : '#ccc'};
+  }
+
+  & .radio-container input:checked ~ .checkmark {
+    background-color: #04D361;
+  }
+
+  & .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  & .radio-container input:checked ~ .checkmark:after {
+    display: flex;
+  }
+
+  & .radio-container .checkmark:after {
+    top: 0.6rem;
+    left: 0.6rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background: #FFF;
+  }
 
   @media (min-width: 700px) {
     width: 35vw;
