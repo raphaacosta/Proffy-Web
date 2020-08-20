@@ -31,7 +31,7 @@ const Dropzone: React.FC<Props> = ({ onFileUploaded }) => {
       { selectedFileUrl 
         ? <img src={selectedFileUrl} alt="Point thumbnail" />
         : (
-          <AiOutlineUser size={65} color="#E5E5E5"/>
+          <AiOutlineUser size={50} color="#E5E5E5"/>
         )
       }
     </DropzoneStyle>
