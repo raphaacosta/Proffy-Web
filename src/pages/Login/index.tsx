@@ -65,12 +65,18 @@ const Login: React.FC = () => {
           </InputContainer>
           <FormLinks>
             <Checkbox>
-              <input type="checkbox" name="lembrardemim"/>
-              <label htmlFor="lembrardemim">Lembrar de mim</label>
+            <label className="check-container">Lembrar-me
+              <input type="checkbox"/>
+              <span className="checkmark"></span>
+            </label>
             </Checkbox>
             <Link to="/forgot-password">Esqueci minha senha</Link>
           </FormLinks>
-          <Button type="submit">Entrar</Button>
+          <Button type="submit" >
+            <Link to="/home">
+              Entrar
+            </Link>
+          </Button>
         </Form>
         <PlusInformation>
           <p>

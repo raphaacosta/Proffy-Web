@@ -144,7 +144,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Form = styled.form`
+export const Form = styled.div`
   margin-top: 40px;
   width: 80vw;
   height: 35.5rem;
@@ -221,6 +221,67 @@ export const Checkbox = styled.div`
   display: flex;
   align-items: center;
   font-family: 400 2.0rem Poppins;
+
+  & .check-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  & .check-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  & .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 0.8rem;
+    background-color: ${({ theme }) => theme.title === 'light' ? '#CCC' : '#EEE'};
+  }
+
+  & .check-container:hover input ~ .checkmark {
+    background-color: ${({ theme }) => theme.title === 'light' ? '#999' : '#ccc'};
+  }
+
+  & .check-container input:checked ~ .checkmark {
+    background-color: #04D361;
+  }
+
+  & .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  & .check-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  & .check-container .checkmark:after {
+    left: 0.8rem;
+    top: 0.5rem;
+    width: 0.5rem;
+    height: 1rem;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
 
   > label {
     margin-left: 10px;
