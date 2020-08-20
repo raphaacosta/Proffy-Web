@@ -53,17 +53,17 @@ export const Header = styled.div`
 
 export const Intro = styled.div`
   width: 72vw;
-  height: 15vh;
+  height: 5rem;
   display: flex;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 2.5rem;
   flex-direction: column;
   align-items: left;
   text-align: left;
   justify-content: start;
 
   > h1 {
-    font: 700 4.5rem Archivo;
+    font: 700 2.5rem Archivo;
     margin-bottom: 10px;
   }
 
@@ -74,16 +74,18 @@ export const Intro = styled.div`
 
   @media (min-width: 700px) {
     width: 35vw;
+    margin-top: 10rem;
+    margin-bottom:0;
   }
 
   @media (min-width: 1100px) {
     width: 28vw;
-    margin-bottom: 50px;
     height: 10vh;
     justify-content: left;
 
     > h1 {
       max-width: 350px;
+      font-size: 4.5rem;
     }
   }
 `;
@@ -91,21 +93,23 @@ export const Intro = styled.div`
 export const FormBox = styled.div`
   display: flex;
   margin: 0 auto;
+  margin-top: 10rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0 10px;
   width: 70vw;
-  height: 40vh;
+  height: 12rem;
 
   @media (min-width: 700px){ 
     width: 35vw;
     height: 50vh;
+    margin-top: 0;
   }
 
   @media (min-width: 1100px) {
     height: 40vh;
-    width: 30;
+    width: 30vw;
   }
 `;
 
