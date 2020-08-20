@@ -148,8 +148,7 @@ export const ContentContainer = styled.div`
 
   display: flex;
   align-items: center;
-  align-items: center;
-  flex-direction: row;
+  justify-content: center;
   border-radius: 0.8rem;
   color: var(--color-text-in-primary);
   
@@ -192,6 +191,10 @@ export const WebContentContainer = styled.div`
   justify-content: center;
   background: var(--color-background);
 
+  @media (min-width: 700px) {
+    margin-top: 10rem;
+  }
+
   @media (min-width: 1100px) {
     width: 100vw;
     height: 40vh;
@@ -201,17 +204,18 @@ export const WebContentContainer = styled.div`
 
 export const ButtonsContainer = styled.div`
   display: flex;
+  width: 85vw;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
   margin: 3.2rem 0;
 
   > a {
-    width: 30rem;
-    height: 10.4rem;
+    width: 15rem;
+    height: 6rem;
     border-radius: 0.8rem;
     font: 700 2.0rem Archivo;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,15 +224,6 @@ export const ButtonsContainer = styled.div`
     color: var(--color-button-text);
 
     transition: background-color 0.2s;
-    
-    > img {
-      width: 4rem;
-      margin-right: 2.4rem;
-    }
-  }
-
-  > a:first-child {
-    margin-bottom: 1.6rem;
   }
 
   > a.study {
@@ -250,6 +245,20 @@ export const ButtonsContainer = styled.div`
   @media (min-width: 700px) {
     flex-direction: row;
 
+    > a {
+      width: 30rem;
+      height: 10.4rem;      
+      
+      > img {
+        width: 4rem;
+        margin-right: 2.4rem;
+      }
+    }
+
+    > a:first-child {
+      margin-bottom: 1.6rem;
+    }
+
     > a:first-child {
       margin-right: 1.6rem;
       margin-bottom: 0;
@@ -257,6 +266,7 @@ export const ButtonsContainer = styled.div`
   }
 
   @media (min-width: 1100px) {
+    width: 60rem;
     flex-direction: row;
     justify-content: flex-start;
     max-width: 1100px;
