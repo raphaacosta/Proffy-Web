@@ -218,7 +218,6 @@ export const Checkbox = styled.div`
     padding-left: 2.7rem;
     margin-bottom: 12px;
     cursor: pointer;
-    font-family: 400 0.1rem Poppins;
     font-size: 22px;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -290,6 +289,10 @@ export const Checkbox = styled.div`
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
+
+      p {
+        font: 400 2rem Archivo;
+      }
     }
 
     & .check-container input {
@@ -366,6 +369,7 @@ export const FormLinks = styled.div`
   @media (min-width: 1400px) {
     width: 20vw;
     font-size: 1.4rem;
+    font: 400 2rem Archivo;
   }
 `;
 
