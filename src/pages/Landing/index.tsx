@@ -55,7 +55,7 @@ const Landing = () => {
           </UserProfile>
           <SwitchContainer>
             <LogOutButton>
-              <Link to="/login">
+              <Link to="/">
                 <img src={logOutIcon} alt="Sair"/>
               </Link>
             </LogOutButton>
@@ -63,8 +63,7 @@ const Landing = () => {
           </SwitchContainer>
         </TopBar>
       </TopBarContainer>
-    <ContentContainer>
-      <WebContentContainer>
+      <ContentContainer>
         <LogoContainer>
           {title === 'light' ? (
             <img src={logoImg} alt="Proffy"/>
@@ -84,6 +83,8 @@ const Landing = () => {
             alt="Plataforma de estudos"
           />
         )}
+      </ContentContainer>
+      <WebContentContainer>
         <Message>
           <p>Seja bem-vindo.<br/>
             <strong> O que deseja fazer?</strong>
@@ -94,24 +95,23 @@ const Landing = () => {
         </TotalConnections>
         <ButtonsContainer>
           <Link to="/study" className="study">
-             {title === 'light' ? (
-               <img src={studyIcon} alt="Estudar"/>
-             ) : (
+            {title === 'light' ? (
+              <img src={studyIcon} alt="Estudar"/>
+            ) : (
                 <img src={studyIconDark} alt="Estudar"/>
-             )}
-             Estudar 
+            )}
+            Estudar 
           </Link>
           <Link to="/give-classes" className="give-classes">
-             {title === 'light' ? (
-               <img src={giveClassesIcon} alt="Dar aula"/>
-             ) : (
+            {title === 'light' ? (
+              <img src={giveClassesIcon} alt="Dar aula"/>
+            ) : (
               <img src={giveClassesIconDark} alt="Dar aula"/>
-             )}
-             Dar aula
+            )}
+            Dar aula
           </Link>
         </ButtonsContainer>
       </WebContentContainer>
-    </ContentContainer>
     </Container>
   );
 }

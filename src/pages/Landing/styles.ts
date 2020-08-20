@@ -11,48 +11,12 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const ContentContainer = styled.div`
-  width: 100vw;
-  height: 200vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: var(--color-text-in-primary);
-  
-  @media (min-width: 700px) {
-    width: 100vw;
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: var(--color-primary);
-  }
-  
-  @media (min-width: 1100px) {
-    #page-landing-content {
-      max-width: 1100px;
-
-      display: grid;
-      grid-template-rows: 350px 1fr;
-      grid-template-columns: 2fr 1fr 1fr;
-      grid-template-areas: 
-        "logo hero hero" 
-        "buttons buttons total"
-      ;
-    }
-  }
-`;
-
 export const TopBarContainer = styled.div`
   width: 100%;
   height: 60px;
   margin-top: 10px;
   padding: 0 1.6rem;
-  display: flex; 
+  display: flex;
 
   @media (min-width: 700px) {
     height: 55px;
@@ -76,13 +40,14 @@ export const TopBar = styled.div`
   }
 
   @media (min-width: 700px){
-    max-width: 1100px;
+    max-width: 1250px;
   }
 `;
 
 export const UserProfile = styled(Link)`
   width: 17rem;
   height: 100%;
+  text-decoration: none;
   display: flex;
   background: transparent;
   border: 0;
@@ -146,20 +111,6 @@ export const LogOutButton = styled.div`
   }
 `;
 
-export const WebContentContainer = styled.div`
-  @media (min-width: 1100px) {
-    max-width: 1100px;
-
-    display: grid;
-    grid-template-rows: 350px 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-      "logo logo hero hero" 
-      "message total buttons buttons"
-    ;
-  }
-`;
-
 export const LogoContainer = styled.div`
   > img {
     height: 5rem;
@@ -176,7 +127,6 @@ export const LogoContainer = styled.div`
   }
 
   @media(min-width: 1100px) {
-    grid-area: logo;
     align-self: center;
     margin: 0;
     text-align: left;
@@ -192,19 +142,60 @@ export const LogoContainer = styled.div`
   }
 `;
 
+export const ContentContainer = styled.div`
+  width: 100vw;
+  height: 200vh;
+
+  display: flex;
+  align-items: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 0.8rem;
+  color: var(--color-text-in-primary);
+  
+  @media (min-width: 700px) {
+    width: 100vw;
+    height: 60vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-primary);
+  }
+  
+  @media (min-width: 1100px) {
+    #page-landing-content {
+      max-width: 1100px;
+      justify-content: space-between;
+    }
+  }
+`;
+
 export const HeroImage = styled.img`
-  width: 100%;
   display: none;
   margin-bottom: 10px;
 
   @media (min-width: 700px) {
-    display: grid;
+    display: flex;
+    margin-left: 12rem;
+    width: 599px;
+    height: 350px;
   }
+`;
+
+export const WebContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-background);
 
   @media (min-width: 1100px) {
-    display: grid;
-    grid-area: hero;
-    justify-content: end;
+    width: 100vw;
+    height: 40vh;
+    flex-direction: row;
   }
 `;
 
@@ -212,7 +203,7 @@ export const ButtonsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   margin: 3.2rem 0;
 
   > a {
@@ -267,8 +258,8 @@ export const ButtonsContainer = styled.div`
 
   @media (min-width: 1100px) {
     flex-direction: row;
-    grid-area: buttons;
     justify-content: flex-start;
+    max-width: 1100px;
 
     > a:first-child {
       margin-right: 1.6rem;
@@ -299,8 +290,6 @@ export const Message = styled.div`
   @media (min-width: 1100px) {
     font-size: 2.5rem;
     max-width: 220px;
-    display: grid;
-    grid-area: message;
     justify-content: flex-start;
   }
 
@@ -319,9 +308,9 @@ export const TotalConnections = styled.span`
 
   @media (min-width: 1100px) {
     max-width: 120px;
-    margin-right: 50px;
+    margin-left: 20rem;
+    margin-right: 5rem;
     text-align: center;
-    grid-area: total;
     justify-self: end;
 
     > img {
