@@ -12,6 +12,7 @@
     "@types/react-dom": "^16.9.0",
     "axios": "^0.19.2",
     "elliptic": "^6.5.3",
+    "node-forge": "^0.10.0",
     "polished": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
