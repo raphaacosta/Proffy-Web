@@ -14,7 +14,7 @@
     "elliptic": "^6.5.4",
     "immer": "^8.0.1",
     "node-forge": "^0.10.0",
-    "object-path": "^0.11.5",
+    "object-path": "^0.11.6",
     "polished": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
